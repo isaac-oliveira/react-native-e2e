@@ -1,0 +1,27 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "e2e/config.json",
+  "skipLegacyWorkersInjection": true,
+  "devices": {
+    "simulator": {
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPhone SE (3rd generation)"
+      }
+    }
+  },
+  "apps": {
+    "ios.release": {
+      "name": "ReactNativeE2E",
+      "type": "ios.app",
+      "binaryPath": "./ios/build/Build/Products/Release-iphonesimulator/ReactNativeE2E.app",
+      "build": "xcodebuild -workspace ios/ReactNativeE2E.xcworkspace -configuration release -scheme ReactNativeE2E -sdk iphonesimulator -derivedDataPath ios/build"
+    }
+  },
+  "configurations": {
+    "ios.sim.release": {
+      "device": "simulator",
+      "app": "ios.release"
+    }
+  }
+}
