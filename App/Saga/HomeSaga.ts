@@ -5,7 +5,6 @@ import {Api} from '../Services/Api';
 export function* getData(api: Api) {
   // @ts-ignore
   const response = yield call(api.getData);
-  console.log(response.data);
   if (!response.ok) {
     yield put(HomeActions.ui.failure('Erro ao obter os dados'));
     return;
