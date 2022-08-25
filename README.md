@@ -39,3 +39,10 @@ Caso queira tirar screenshot a medida que o teste ocorrer é necessário adicion
 	"rootDir": "./e2e/artifacts"
 }
 ```
+
+### EXEMPLO
+
+https://user-images.githubusercontent.com/42910855/186785132-91d5ab61-6da1-421a-a268-7fbf0179b558.mov
+
+
+
