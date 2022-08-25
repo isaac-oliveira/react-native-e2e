@@ -21,15 +21,23 @@ const LoginScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Login</Text>
-      <Field placeholder="E-mail" value={email} onChangeText={setEmail} />
       <Field
+        testID="field-email"
+        placeholder="E-mail"
+        value={email}
+        onChangeText={setEmail}
+      />
+      <Field
+        testID="field-password"
         placeholder="Senha"
         value={password}
         secureTextEntry
         onChangeText={setPassword}
       />
 
-      {!fetching && <Button title="Entrar" onPress={handleLogin} />}
+      {!fetching && (
+        <Button testID="button-login" title="Entrar" onPress={handleLogin} />
+      )}
       {fetching && <ActivityIndicator size={'large'} />}
     </View>
   );
