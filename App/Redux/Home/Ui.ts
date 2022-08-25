@@ -1,9 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-export interface IAuthData {
-  email: string;
-  password: string;
-}
 export interface State {
   fetching: boolean;
   error: string | null;
@@ -15,10 +11,10 @@ const initialState: State = {
 };
 
 const uiSlice = createSlice({
-  name: 'ui/auth',
+  name: 'ui/home',
   initialState,
   reducers: {
-    request: (state: State, _action: PayloadAction<IAuthData>) => {
+    request: (state: State) => {
       state.fetching = true;
       state.error = null;
     },
@@ -27,7 +23,6 @@ const uiSlice = createSlice({
       state.error = action.payload;
     },
     success: _state => initialState,
-    logout: _state => initialState,
   },
 });
 

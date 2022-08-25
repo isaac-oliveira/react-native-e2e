@@ -1,5 +1,11 @@
-import React, {useState} from 'react';
-import {View, Text, StyleSheet, ActivityIndicator} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ActivityIndicator,
+  LayoutAnimation,
+} from 'react-native';
 import {useSelector} from 'react-redux';
 import {useDispatch} from 'react-redux';
 import {Button, Field} from '../Components';
@@ -11,8 +17,13 @@ const LoginScreen = () => {
   const [password, setPassword] = useState('');
 
   const fetching = useSelector(AuthSelectors.isFetching);
+  const error = useSelector(AuthSelectors.getError);
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
+  });
 
   const handleLogin = () => {
     dispatch(AuthActions.ui.request({email, password}));
@@ -35,6 +46,8 @@ const LoginScreen = () => {
         onChangeText={setPassword}
       />
 
+      {error && <Text style={styles.error}>{error}</Text>}
+
       {!fetching && (
         <Button testID="button-login" title="Entrar" onPress={handleLogin} />
       )}
@@ -52,6 +65,10 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: '600',
+    marginBottom: 24,
+  },
+  error: {
+    color: 'red',
     marginBottom: 24,
   },
 });
