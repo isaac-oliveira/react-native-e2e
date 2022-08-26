@@ -1,19 +1,13 @@
 describe('Example', () => {
-  let server;
   beforeAll(async () => {
     await device.launchApp();
-    // server = require('../server.js');
   });
 
   beforeEach(async () => {
     await device.reloadReactNative();
   });
 
-  afterAll(async () => {
-    // await server.termate();
-  });
-
-  it('should have Login on screen', async () => {
+  it('Verifica se está na tela de login', async () => {
     await expect(element(by.text('Login'))).toBeVisible();
   });
 
