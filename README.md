@@ -30,7 +30,7 @@ Depois é só rodar os testes e verificar os resultados
 npx detox test --configuration ios.sim.release
 ```
 
-Obs: `ios.sim.release` é foi um nome dado na hora de configurar a iOS
+Obs: `ios.sim.release` foi um nome dado na hora de configurar a iOS
 
 Caso queira tirar screenshot a medida que o teste ocorrer é necessário adicionar as configurações abaixo no `.detoxrc.json`
 
@@ -39,3 +39,10 @@ Caso queira tirar screenshot a medida que o teste ocorrer é necessário adicion
 	"rootDir": "./e2e/artifacts"
 }
 ```
+
+### EXEMPLO
+
+https://user-images.githubusercontent.com/42910855/186785132-91d5ab61-6da1-421a-a268-7fbf0179b558.mov
+
+
+
